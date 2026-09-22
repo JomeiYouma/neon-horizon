@@ -25,9 +25,6 @@ let canvas, scene, camera, renderer,
  */
 export const init = (prod=false)=>{
 
-  // Canvas
-  canvas = document.querySelector('canvas.webgl');
-
   // Scene
   scene = new THREE.Scene();
 
@@ -48,7 +45,10 @@ export const init = (prod=false)=>{
   renderer.setSize( sizes.width, sizes.height );
   renderer.setClearColor( backgroundColor, 1 );
 
-  document.body.appendChild(renderer.domElement);
+  // Canvas
+  canvas = renderer.domElement;
+
+  document.body.appendChild(canvas);
 
   prepare_responsive();
 
@@ -58,7 +58,12 @@ export const init = (prod=false)=>{
     document.body.appendChild( stats.dom );
   }
 
-  return {scene: scene, camera: camera, renderer: renderer};
+  return {
+    scene: scene, 
+    camera: camera, 
+    renderer: renderer, 
+    canvas: canvas
+  };
 }
 
 /**
