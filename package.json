@@ -1,0 +1,17 @@
+{
+  "name": "starter-v2.1",
+  "private": true,
+  "version": "2.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0",
+    "vite-plugin-restart": "^2.0.0"
+  }
+}
