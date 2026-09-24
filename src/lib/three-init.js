@@ -69,8 +69,9 @@ export const init = (prod=false)=>{
 /**
  * Start the animation loop, calling the animate function with the delta time
  * @property {function} animate - The function to call each frame with the delta time
+ * @property {function} [render] - Optional custom render function (e.g. effectComposer.render), defaults to renderer.render(scene, camera)
  */
-export const run = (animate)=>{
+export const run = (animate, render = ()=> renderer.render( scene, camera ))=>{
 
   // Timer
   timer = new THREE.Timer();
@@ -84,8 +85,8 @@ export const run = (animate)=>{
 
     animate(delta);
 
-    stats.update();
-    renderer.render( scene, camera );
+    if(stats) stats.update();
+    render();
   } );
 } 
 
