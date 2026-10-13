@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Neon Horizon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@500;800;900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-DFUGxjiH.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CQVYVGJA.css">
+</head>
+<body>
+    <div class="controls">
+        <label>
+            <span>Hauteur <output id="height-value"></output></span>
+            <input id="height" type="range" min="0" max="10" step="0.1">
+        </label>
+        <label>
+            <span>Vitesse <output id="speed-value"></output></span>
+            <input id="speed" type="range" min="0" max="10" step="0.1">
+        </label>
+        <label>
+            <span>Amplitude <output id="amplitude-value"></output></span>
+            <input id="amplitude" type="range" min="0" max="3" step="0.05">
+        </label>
+        <div class="source" role="group" aria-label="Le terrain réagit à">
+            <button type="button" data-source="music" aria-pressed="true">Musique</button>
+            <button type="button" data-source="mic" aria-pressed="false">Micro</button>
+        </div>
+    </div>
+
+    <!-- Game HUD: positions are set from the 3D scene (rhythm.js) -->
+    <div class="hud">
+        <div class="combo" hidden>
+            <span class="combo-value">0</span>
+            <span class="combo-label">Combo</span>
+            <span class="combo-max"></span>
+        </div>
+        <div class="judgements"></div>
+    </div>
+
+    <div class="start">
+        <p class="start-sub">リズム・ドライブ</p>
+        <h1 class="start-title">Neon Horizon</h1>
+        <p class="start-track"></p>
+        <p class="start-help">
+            Frappez <kbd>A</kbd> <kbd>Z</kbd> <kbd>O</kbd> <kbd>P</kbd>
+            quand les sphères atteignent les anneaux
+        </p>
+        <p class="start-press">Chargement du morceau…</p>
+        <button type="button" class="song-pick">Choisir un morceau</button>
+        <input class="song-file" type="file" accept="audio/*" hidden>
+    </div>
+
+    <div class="results hidden">
+        <p class="start-sub">終わり</p>
+        <h2 class="results-title">Fin du morceau</h2>
+        <dl class="results-values"></dl>
+        <p class="start-press">Espace pour rejouer</p>
+        <button type="button" class="song-pick">Changer de morceau</button>
+    </div>
+
+</body>
+</html>
