@@ -2,6 +2,7 @@ import restart from 'vite-plugin-restart'
 
 export default {
     root: 'src/', // Sources files (typically where index.html is)
+    base: './', // Relative URLs, so the build also works from a sub-folder (GitHub Pages)
     publicDir: '../static/', // Path from "root" to static assets (files that are served as they are)
     server:
     {

@@ -21,7 +21,7 @@ let canvas, scene, camera, renderer,
  * Init the three.js engine and return the scene, camera and renderer
  * camera z = 3, anti-aliasing enabled, responsive to window resize
  * @property {boolean} prod - If true, stats will not be displayed
- * @returns {object} - {scene, camera, renderer}
+ * @returns {object} - {scene, camera, renderer, canvas, stats}
  */
 export const init = (prod=false)=>{
 
@@ -62,7 +62,8 @@ export const init = (prod=false)=>{
     scene: scene, 
     camera: camera, 
     renderer: renderer, 
-    canvas: canvas
+    canvas: canvas,
+    stats: stats
   };
 }
 
